@@ -1,6 +1,6 @@
 'use client'
 
-import { Bell, ChevronDown, Home, LayoutDashboard, Plus, RefreshCcw, Send, Wallet } from 'lucide-react'
+import { Bell, Home, LayoutDashboard, Plus, RefreshCcw, Wallet } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
