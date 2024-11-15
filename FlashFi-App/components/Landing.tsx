@@ -1,8 +1,19 @@
 import { useState } from 'react'
 import { MenuIcon, XIcon } from 'lucide-react'
 
+import {
+  DynamicWidget,
+  // useDynamicContext,
+} from "@/lib/dynamic";
+//import { useAccount} from 'wagmi'
+//import Spinner from "@/components/Spinner";
+
 export default function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+//  const { sdkHasLoaded, user } = useDynamicContext();
+//  const [isLoading, setIsLoading] = useState<boolean>(true);
+//  const { address } = useAccount();
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -18,9 +29,14 @@ export default function Landing() {
             <a href="#" className="hover:text-yellow-400 transition-colors">Resources</a>
             <a href="#" className="hover:text-yellow-400 transition-colors">FlashFi (DAO)</a>
           </div>
-          <button className="hidden md:block bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold py-2 px-4 rounded">
-            Launch App
-          </button>
+          {/* <button className="hidden md:block bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold py-2 px-4 rounded">
+            Launch App *
+          </button> */}
+          <div className="ml-auto flex items-center gap-4">
+              <div className="ml-auto flex items-center gap-4">
+                 <DynamicWidget />
+              </div>
+            </div>          
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
           </button>
