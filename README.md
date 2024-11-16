@@ -88,6 +88,17 @@ Please refer to individual package documentation for specific setup instructions
 | DEX | [0x990B88184e088524B2dB5925Ab45788AcD08b9b4](https://sepolia.arbiscan.io/address/0x990B88184e088524B2dB5925Ab45788AcD08b9b4) |
 | Flashloan contract | [0x189878549E1fe744081BC2C4790Dc2c732De40C6](https://sepolia.arbiscan.io/address/0x189878549E1fe744081BC2C4790Dc2c732De40C6) |
 
+### Base smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| USDT | [0xaE8C50705fD0F1Ee54CAF5615cd4B5381C416B48](https://sepolia.basescan.org/address/0xaE8C50705fD0F1Ee54CAF5615cd4B5381C416B48) |
+| Token | [0xBAE8146473796c202ED0439fc67e6F161C430159](https://sepolia.basescan.org/address/0xBAE8146473796c202ED0439fc67e6F161C430159) |
+| Factory | [0xed815da5E8f9EeB71af564774eBbf9a25e1263a7](https://sepolia.basescan.org/address/0xed815da5E8f9EeB71af564774eBbf9a25e1263a7) |
+| DAO Multisig | [0x413C429FDcD5132671F8D5f6E3ebB7600E953719](https://sepolia.basescan.org/address/0x413C429FDcD5132671F8D5f6E3ebB7600E953719) |
+| DEX | [0x7Cd8f07401Ea6bC761b75184AfB33D4121A48754](https://sepolia.basescan.org/address/0x7Cd8f07401Ea6bC761b75184AfB33D4121A48754) |
+| Flashloan contract | [0xab5104400eB6b7a7d54120ad05169a2eeFaDD33b](https://sepolia.basescan.org/address/0xab5104400eB6b7a7d54120ad05169a2eeFaDD33b) |
+
 
 
 ### Mantle smart contract address table
