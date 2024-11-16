@@ -42,8 +42,8 @@ const FACTORY_ADDRESSES = {
   'rootstock-testnet': '0xab99a7BC0F0da16fF521525d64790bC133db4a0E',
   'celo-alfajores': '0x70dDB1e89Ca415DDB8F6B0C609131713236D9617',
   'scroll-sepolia': '0x0d44973607f76CB80d99A8eB8d70B097523DE584',
-  'base-sepolia': '0xBAE8146473796c202ED0439fc67e6F161C430159',
-  'arbitrum-sepolia': '0xdCA4D52154762d2cA6d925A18Caad817cf990554',
+  'base-sepolia': '0xed815da5E8f9EeB71af564774eBbf9a25e1263a7',
+  'arbitrum-sepolia': '0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B',
 }
 
 export default function Component() {
