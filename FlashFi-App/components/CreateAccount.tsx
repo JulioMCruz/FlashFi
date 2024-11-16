@@ -17,7 +17,7 @@ import {
 import HeaderComponent from "@/components/Header";
 
 import FlashMultisigFactoryABI from '../abi/FlashMultisigFactory.json';
-import { useWriteContract } from 'wagmi';
+import { useWriteContract, usePublicClient } from 'wagmi';
 import { mantleSepoliaTestnet, rootstockTestnet, celoAlfajores, baseSepolia, arbitrumSepolia, scrollSepolia, lineaSepolia } from 'viem/chains'
 
 import {
@@ -26,6 +26,10 @@ import {
   getNetwork,
 } from "@dynamic-labs/sdk-react-core";
 import { useRouter } from 'next/navigation';
+import { isAddress } from 'viem'
+import { normalize } from 'viem/ens'
+import { createPublicClient, http } from 'viem'
+import { mainnet } from 'viem/chains'
 
 interface Signer {
   name: string
@@ -155,6 +159,38 @@ export default function Component() {
   }  
 
   const router = useRouter();
+
+  const publicClient = usePublicClient()
+
+  // Create a separate public client for mainnet ENS resolution
+  const mainnetClient = createPublicClient({
+    chain: mainnet,
+    transport: http()
+  })
+
+  const resolveENS = async (ensName: string) => {
+    try {
+      const address = await mainnetClient.getEnsAddress({
+        name: normalize(ensName),
+      })
+      return address
+    } catch (error) {
+      console.error('Error resolving ENS:', error)
+      return null
+    }
+  }
+
+  const lookupENS = async (address: string) => {
+    try {
+      const ensName = await mainnetClient.getEnsName({
+        address: address as `0x${string}`,
+      })
+      return ensName
+    } catch (error) {
+      console.error('Error looking up ENS:', error)
+      return null
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 p-6">
@@ -307,12 +343,36 @@ export default function Component() {
                             <div className="relative">
                               <Label className="text-gray-300">Signer</Label>
                               <div className="flex space-x-2">
-                                <Input
-                                  value={signer.address}
-                                  onChange={(e) => updateSigner(index, 'address', e.target.value)}
-                                  className="bg-gray-900 border-gray-700 text-white mt-1"
-                                  placeholder="sep: 0x..."
-                                />
+                                <div className="relative flex-1">
+                                  <Input
+                                    value={signer.address}
+                                    onChange={(e) => updateSigner(index, 'address', e.target.value)}
+                                    className="bg-gray-900 border-gray-700 text-white mt-1 pr-24"
+                                    placeholder="ENS or 0x..."
+                                  />
+                                  <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="sm"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 text-yellow-400 hover:text-yellow-500"
+                                    onClick={async () => {
+                                      const value = signer.address
+                                      if (value.endsWith('.eth') || value.includes('.')) {
+                                        const address = await resolveENS(value)
+                                        if (address) {
+                                          updateSigner(index, 'address', address)
+                                        }
+                                      } else if (isAddress(value)) {
+                                        const ensName = await lookupENS(value)
+                                        if (ensName) {
+                                          updateSigner(index, 'address', ensName)
+                                        }
+                                      }
+                                    }}
+                                  >
+                                    {signer.address.includes('0x') ? 'To ENS' : 'To Address'}
+                                  </Button>
+                                </div>
                                 {index > 0 && (
                                   <Button
                                     variant="ghost"
