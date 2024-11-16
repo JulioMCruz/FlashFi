@@ -33,6 +33,7 @@ export default function Component() {
 
   const addSigner = () => {
     setSigners([...signers, { name: `Signer ${signers.length + 1}`, address: '' }])
+    console.log(signers)
   }
 
   const removeSigner = (index: number) => {

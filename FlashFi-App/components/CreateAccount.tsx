@@ -1,19 +1,24 @@
 'use client'
 
-import { Info } from 'lucide-react'
-import { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Info } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import HeaderComponent from "@/components/Header"
+} from "@/components/ui/select";
+import HeaderComponent from "@/components/Header";
+
+import FlashMultisigFactoryABI from '../abi/FlashMultisigFactory.json';
+import { useWriteContract } from 'wagmi';
+
+
 export default function Component() {
   const [accountName, setAccountName] = useState('')
   const [selectedNetwork, setSelectedNetwork] = useState('')
@@ -26,6 +31,37 @@ export default function Component() {
     { id: 'optimism', name: 'Optimism', icon: '🔴' },
     { id: 'sepolia', name: 'Sepolia', icon: '🔮' },
   ]
+
+  const { writeContract } = useWriteContract();
+
+  const handleCreateAccount = async () => {
+    console.log('Create Account');
+
+
+    // // Deploy Factory
+    // const Factory = await ethers.getContractFactory("FlashMultisigFactory");
+    // const factory = await Factory.deploy();
+    // await factory.waitForDeployment();
+    // console.log("Factory deployed to:", factory.target);
+    
+    // // Deploy new DaoMultiSig through factory
+    // const owners = ["0xe2b8651bF50913057fF47FC4f02A8e12146083B8"];
+    // const requiredConfirmations = 1;
+    // const deployTx = await factory.deployNewMultisig(owners, requiredConfirmations);
+    // const receipt = await deployTx.wait();
+
+    await writeContract({ 
+      abi: FlashMultisigFactoryABI.abi,
+      address: '0xab99a7BC0F0da16fF521525d64790bC133db4a0E',
+      functionName: 'deployNewMultisig',
+      args: [
+        '0xe2b8651bF50913057fF47FC4f02A8e12146083B8',
+        1,
+      ],
+   })
+    
+
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 p-6">
@@ -111,8 +147,10 @@ export default function Component() {
                 <Button variant="outline" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400/10">
                   Cancel
                 </Button>
-                <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600">
-                  Next
+                <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600"
+                onClick={handleCreateAccount}
+                >
+                  Create Account
                 </Button>
               </div>
             </div>
