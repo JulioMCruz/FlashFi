@@ -213,6 +213,7 @@ export default function Component() {
               </CardContent>
             </Card>
           </div>
+          
         </div>
       </main>
     </div>
