@@ -6,6 +6,32 @@ FlashFi is a decentralized flash loan protocol designed specifically for DAOs, e
 
 FlashFi revolutionizes DAO treasury management by allowing DAOs to utilize their idle treasury funds through a secure multi-signature flash loan system. Unlike traditional flash loan protocols where funds remain untouched, FlashFi enables DAOs to generate yield while maintaining security through multi-signature governance.
 
+## Architecture
+
+![FlashFi Architecture Diagram](Documents/architecture.jpg)
+
+The FlashFi architecture consists of several key components working together to provide secure, multi-signature controlled flash loans:
+
+1. **Smart Contract Layer**
+   - Core Flash Loan Logic
+   - Multi-signature Validation
+   - Treasury Management Contracts
+   - Security Controls
+
+2. **Governance Layer**
+   - DAO Multi-sig Controls
+   - Proposal Management
+   - Voting Mechanisms
+   - Access Control
+
+3. **Integration Layer**
+   - External Protocol Interfaces
+   - Cross-chain Bridges
+   - Oracle Connections
+   - API Endpoints
+
+This architecture ensures secure treasury management while maintaining the flexibility needed for flash loan operations, all protected by multi-signature controls.
+
 ## Problem It Solves
 
 ### Treasury Management
