@@ -148,12 +148,52 @@ const deployments = {
 
   await saveDeployments(network.chainId, deployments);
   console.log("Deployments saved to deployments.json");
+
+  // We borrow USDT to pay back loans so check profit
+  console.log("DaoSig Earnings:", await daoMultisig.accumulatedFees(usdt.target));
+
+
+
+  // run the flashloan again
+
+  const flashLoanAmounts = [
+    ethers.parseEther("200"),
+    ethers.parseEther("400"),
+    ethers.parseEther("600"),
+    ethers.parseEther("800")
+    ];
+    
+    for (let i = 0; i < flashLoanAmounts.length; i++) {
+        const amount = flashLoanAmounts[i];
+      
+    
+        // Execute liquidation
+    await simulator.simulateLiquidation(
+        usdt.target,
+        token.target,
+        flashLoanAmount
+    );
+
+
+    }
+
+    // Get accumulated fees from contract (using public mapping)
+    const contractFees = await daoMultisig.accumulatedFees(usdt.target);
+    console.log("New fees after flashloan", contractFees);
 }
 
 
 } catch (error) {
     console.error("\nDeployment failed!");
     console.error("Error details:", error);
+    
+    if (error.message.includes("network connection")) {
+      console.error("\nPossible solutions:");
+      console.error("1. Check if your RPC URL is correct in .env file");
+      console.error("2. Verify network connection");
+      console.error("3. Make sure you're connected to the right network");
+    }
+    
     process.exit(1);
   }
 }
