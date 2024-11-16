@@ -39,10 +39,10 @@ export default function OnchainProvider({ children }: { children: ReactNode }) {
         : [],
     };
   };
-  
+
   const evmNetworks = [
-    viemChainToCustomNetwork(rootstockTestnet, 'https://app.dynamic.xyz/assets/networks/eth.svg'),
-    viemChainToCustomNetwork(mantleSepoliaTestnet, 'https://app.dynamic.xyz/assets/networks/eth.svg'),
+    viemChainToCustomNetwork(rootstockTestnet, '/assets/rootstock.png'),
+    viemChainToCustomNetwork(mantleSepoliaTestnet, '/assets/mantle.png'),
   ];
 
   if (!dynamicEnvId) {
