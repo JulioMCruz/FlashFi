@@ -77,6 +77,19 @@ Please refer to individual package documentation for specific setup instructions
 - [FlashFi-Interface](./FlashFi-Interface/README.md) - User interface
 
 
+### Arbitrum smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| USDT | [0x0b60841Fb24381bB9c9Bbb5Bcd5430bb009B351c](https://sepolia.arbiscan.io/address/0x0b60841Fb24381bB9c9Bbb5Bcd5430bb009B351c) |
+| Token | [0xdCA4D52154762d2cA6d925A18Caad817cf990554](https://sepolia.arbiscan.io/address/0xdCA4D52154762d2cA6d925A18Caad817cf990554) |
+| Factory | [0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B](https://sepolia.arbiscan.io/address/0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B) |
+| DAO Multisig | [0x3277d8987062F7a412702856D6fa7d93a4d8eDC0](https://sepolia.arbiscan.io/address/0x3277d8987062F7a412702856D6fa7d93a4d8eDC0) |
+| DEX | [0x990B88184e088524B2dB5925Ab45788AcD08b9b4](https://sepolia.arbiscan.io/address/0x990B88184e088524B2dB5925Ab45788AcD08b9b4) |
+| Flashloan contract | [0x189878549E1fe744081BC2C4790Dc2c732De40C6](https://sepolia.arbiscan.io/address/0x189878549E1fe744081BC2C4790Dc2c732De40C6) |
+
+
+
 ### Mantle smart contract address table
 
 | Component | Address |
@@ -87,8 +100,6 @@ Please refer to individual package documentation for specific setup instructions
 | DAO Multisig | [0x5Ec971128Ea605CB37aeF57Ca0011bB3b9E7994D](https://sepolia.mantlescan.xyz/address/0x5ec971128ea605cb37aef57ca0011bb3b9e7994d) |
 | DEX | [0xe4E846a3c1bb3B16C76eb4D64292fadB0A72E813](https://sepolia.mantlescan.xyz/address/0xe4E846a3c1bb3B16C76eb4D64292fadB0A72E813) |
 | Flashloan contract | [0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1](https://sepolia.mantlescan.xyz/address/0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1) |
-
-
 
 
 ### Rootstock smart contract address table
