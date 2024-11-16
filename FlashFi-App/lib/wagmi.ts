@@ -1,9 +1,9 @@
 import { createConfig, http } from '@wagmi/core'
-import { rootstockTestnet, mantleSepoliaTestnet, celoAlfajores, baseSepolia , arbitrumSepolia, scrollSepolia } from 'viem/chains';
+import { rootstockTestnet, mantleSepoliaTestnet, celoAlfajores, baseSepolia , arbitrumSepolia, scrollSepolia, lineaSepolia } from 'viem/chains';
 
 
 export const config = createConfig({
-  chains: [rootstockTestnet, mantleSepoliaTestnet, celoAlfajores, baseSepolia, arbitrumSepolia, scrollSepolia],
+  chains: [rootstockTestnet, mantleSepoliaTestnet, celoAlfajores, baseSepolia, arbitrumSepolia, scrollSepolia, lineaSepolia],
   multiInjectedProviderDiscovery: false,
   ssr: true,
   transports: {
@@ -13,6 +13,7 @@ export const config = createConfig({
     [baseSepolia.id]: http(baseSepolia.rpcUrls.default.http[0]),
     [arbitrumSepolia.id]: http(arbitrumSepolia.rpcUrls.default.http[0]),
     [scrollSepolia.id]: http(scrollSepolia.rpcUrls.default.http[0]),
+    [lineaSepolia.id]: http(lineaSepolia.rpcUrls.default.http[0]),
   },
 });
 
