@@ -1,6 +1,6 @@
 'use client'
 
-import { Bell, ChevronLeft, Info, Send, Wallet } from 'lucide-react'
+import { ChevronLeft, Info, Send } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -19,7 +19,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-
+import HeaderComponent from "@/components/Header";
 interface Token {
   symbol: string
   name: string
@@ -47,25 +47,8 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-gray-900">
-      <header className="border-b border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-              FlashFi
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="icon">
-                <Bell className="h-5 w-5 text-gray-400" />
-              </Button>
-              <div className="flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-2">
-                <Wallet className="h-4 w-4 text-yellow-400" />
-                <span className="text-sm text-gray-300">0xF23L.C58E</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
 
+      <HeaderComponent />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <Button
