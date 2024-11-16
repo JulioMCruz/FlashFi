@@ -76,6 +76,11 @@ Please refer to individual package documentation for specific setup instructions
 - [FlashFi-Contracts](./FlashFi-Contracts/README.md) - Smart contract implementation
 - [FlashFi-Interface](./FlashFi-Interface/README.md) - User interface
 
+| Component | Description |
+|-----------|-------------|
+| FlashFi-Contracts | Core smart contracts implementing flash loan and multi-sig logic |
+| FlashFi-Interface | Web interface for interacting with the FlashFi protocol |
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
