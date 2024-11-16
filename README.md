@@ -125,16 +125,19 @@ Please refer to individual package documentation for specific setup instructions
 | Flashloan contract | [0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B](https://sepolia.scrollscan.com/address/0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B) |
 
 
-### Base smart contract address table
+### Base <=> Arbitrum smart contract address table
 
 | Component | Address |
 |-----------|-------------|
-| Base | Web interface for interacting with the FlashFi protocol |
-| Base | Web interface for interacting with the FlashFi protocol |
-| Base | Web interface for interacting with the FlashFi protocol |
-| Base | Web interface for interacting with the FlashFi protocol |
-| Base | Web interface for interacting with the FlashFi protocol |
-| Base | Web interface for interacting with the FlashFi protocol |
+| Treasury_OApp | [0x89E5B8aFE37acce001c39441A379A0cd9579b93e](https://sepolia.basescan.org/address/0x89E5B8aFE37acce001c39441A379A0cd9579b93e) |
+| Flashloan_OApp | [0xaa5A117785Fbb955664956A1E4aD8CAD783596B1](https://sepolia.arbiscan.io/address/0xaa5A117785Fbb955664956A1E4aD8CAD783596B1)|
+
+### Base <=> Mantle smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| Treasury_OApp | [0x89E5B8aFE37acce001c39441A379A0cd9579b93e](https://sepolia.basescan.org/address/0x89E5B8aFE37acce001c39441A379A0cd9579b93e) |
+| Flashloan_OApp | [0x707a272EEAee86F6F6927a75236fd8ea92e8f622](https://sepolia.mantlescan.xyz/address/0x707a272eeaee86f6f6927a75236fd8ea92e8f622) |
 
 
 
