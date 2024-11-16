@@ -86,7 +86,7 @@ Please refer to individual package documentation for specific setup instructions
 | Factory | [0x1c1e13Cf5C9F8EBA03BB58fD066b466ed09201e6](https://sepolia.mantlescan.xyz/address/0x1c1e13Cf5C9F8EBA03BB58fD066b466ed09201e6) |
 | DAO Multisig | [0x5Ec971128Ea605CB37aeF57Ca0011bB3b9E7994D](https://sepolia.mantlescan.xyz/address/0x5ec971128ea605cb37aef57ca0011bb3b9e7994d) |
 | DEX | [0xe4E846a3c1bb3B16C76eb4D64292fadB0A72E813](https://sepolia.mantlescan.xyz/address/0xe4E846a3c1bb3B16C76eb4D64292fadB0A72E813) |
-| Flashloan | [0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1](https://sepolia.mantlescan.xyz/address/0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1) |
+| Flashloan contract | [0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1](https://sepolia.mantlescan.xyz/address/0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1) |
 
 
 
@@ -95,7 +95,7 @@ Please refer to individual package documentation for specific setup instructions
 
 | Component | Address |
 |-----------|-------------|
-| Flashloan | [0x6f36Fd774e0a31Ba7e4eA0Eb888fCb0A20fa9262](https://rootstock-testnet.blockscout.com/address/0x6f36Fd774E0a31ba7E4EA0EB888fCb0a20Fa9262) |
+| Flashloan contract | [0x6f36Fd774e0a31Ba7e4eA0Eb888fCb0A20fa9262](https://rootstock-testnet.blockscout.com/address/0x6f36Fd774E0a31ba7E4EA0EB888fCb0a20Fa9262) |
 | DEX |[0xaD1A172377f21d3d9d9Fb67cF08eA7A3E281cDBe](https://rootstock-testnet.blockscout.com/address/0xAd1A172377f21d3D9D9Fb67Cf08Ea7a3E281cDbE)|
 | DAO Multisig | [0x2de7984aF8CF790cb3f967231CE99B9Ca56159b1](https://rootstock-testnet.blockscout.com/address/0x2De7984aF8cf790cb3F967231Ce99b9cA56159b1) |
 | Factory | [0xab99a7BC0F0da16fF521525d64790bC133db4a0E](https://rootstock-testnet.blockscout.com/address/0xaB99A7bc0F0Da16Ff521525d64790bC133db4a0e) |
@@ -113,17 +113,28 @@ Please refer to individual package documentation for specific setup instructions
 | Token | [0xed815da5E8f9EeB71af564774eBbf9a25e1263a7](https://celo-alfajores.blockscout.com/address/0xed815da5E8f9EeB71af564774eBbf9a25e1263a7?tab=contract) |
 | USDT | [0xBAE8146473796c202ED0439fc67e6F161C430159](https://celo-alfajores.blockscout.com/address/0xBAE8146473796c202ED0439fc67e6F161C430159?tab=contract_source_code) |
 
+### Scroll smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| USDT | [0xBD0f25368f8323e499Af9B44f351A6e4DDE0db9c](https://sepolia.scrollscan.com/address/0xBD0f25368f8323e499Af9B44f351A6e4DDE0db9c) |
+| Token | [0x7dc164c0eF9A1B22724Cc70f0e7dE736c50b5464](https://sepolia.scrollscan.com/address/0x7dc164c0eF9A1B22724Cc70f0e7dE736c50b5464) |
+| Factory | [0x0d44973607f76CB80d99A8eB8d70B097523DE584](https://sepolia.scrollscan.com/address/0x0d44973607f76CB80d99A8eB8d70B097523DE584) |
+| DAO Multisig | [0x99f51a1A141A210Cc8e55Fa33616f582fad241d4](https://sepolia.scrollscan.com/address/0x99f51a1A141A210Cc8e55Fa33616f582fad241d4) |
+| DEX | [0x92BFAa0dA9F4E569d862cc45A32Bcaf19e8FAfF1](https://sepolia.scrollscan.com/address/0x92BFAa0dA9F4E569d862cc45A32Bcaf19e8FAfF1) |
+| Flashloan contract | [0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B](https://sepolia.scrollscan.com/address/0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B) |
+
+
 ### Base smart contract address table
 
 | Component | Address |
 |-----------|-------------|
 | Base | Web interface for interacting with the FlashFi protocol |
-
-### Scroll smart contract address table
-
-| Component | Address |
-|-----------|-------------|
-| Scroll | Web interface for interacting with the FlashFi protocol |
+| Base | Web interface for interacting with the FlashFi protocol |
+| Base | Web interface for interacting with the FlashFi protocol |
+| Base | Web interface for interacting with the FlashFi protocol |
+| Base | Web interface for interacting with the FlashFi protocol |
+| Base | Web interface for interacting with the FlashFi protocol |
 
 
 
