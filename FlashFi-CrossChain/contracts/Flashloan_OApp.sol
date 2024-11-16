@@ -17,6 +17,10 @@ contract FlashloanOApp is Ownable, OApp {
         liquidationSimulator = _liquidationSimulator;
     }
 
+    function setLiquidationSimulator(address _liquidationSimulator) external onlyOwner {
+        liquidationSimulator = _liquidationSimulator;
+    }
+
     function setCount(uint256 _count) external {
         count = _count;
     }
@@ -49,12 +53,12 @@ contract FlashloanOApp is Ownable, OApp {
             uint256 borrowAmount
         ) = abi.decode(payload, (address, address, uint256)); 
 
-        callSimulateLiquidation(borrowToken, profitToken, borrowAmount);
+        _callSimulateLiquidation(borrowToken, profitToken, borrowAmount);
 
-        resetCount();
+        _resetCount();
     }
 
-    function callSimulateLiquidation(address borrowToken, address profitToken, uint256 borrowAmount) internal {
+    function _callSimulateLiquidation(address borrowToken, address profitToken, uint256 borrowAmount) internal {
         (bool success,) = liquidationSimulator.call(
             abi.encodeWithSignature(
                 "simulateLiquidation(address,address,uint256)",
@@ -67,7 +71,7 @@ contract FlashloanOApp is Ownable, OApp {
         require(success, "simulateLiquidation call failed");
     }
 
-    function resetCount() internal {
+    function _resetCount() internal {
         count = 10;
     }
 }
