@@ -1,6 +1,6 @@
 'use client'
 
-import { Bell, Info, Wallet } from 'lucide-react'
+import { Info } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-
+import HeaderComponent from "@/components/Header"
 export default function Component() {
   const [accountName, setAccountName] = useState('')
   const [selectedNetwork, setSelectedNetwork] = useState('')
@@ -29,20 +29,8 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-gray-900 p-6">
-      <header className="container mx-auto flex justify-between items-center mb-8">
-        <div className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-          FlashFi
-        </div>
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="icon">
-            <Bell className="h-5 w-5 text-gray-400" />
-          </Button>
-          <div className="flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-2">
-            <Wallet className="h-4 w-4 text-yellow-400" />
-            <span className="text-sm text-gray-300">{walletAddress}</span>
-          </div>
-        </div>
-      </header>
+
+      <HeaderComponent />
 
       <main className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
