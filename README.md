@@ -77,32 +77,37 @@ Please refer to individual package documentation for specific setup instructions
 - [FlashFi-Interface](./FlashFi-Interface/README.md) - User interface
 
 
-### Mantle Smart contract address table
+### Mantle smart contract address table
 
 | Component | Address |
 |-----------|-------------|
 | Mantle | Core smart contracts implementing flash loan and multi-sig logic |
 
 
-### Rootstock Smart contract address table
+### Rootstock smart contract address table
 
 | Component | Address |
 |-----------|-------------|
-| Rootstock | [0x6f36Fd774e0a31Ba7e4eA0Eb888fCb0A20fa9262](https://explorer.testnet.rootstock.io/address/0x6f36fd774e0a31ba7e4ea0eb888fcb0a20fa9262) |
+| Flashloan | [0x6f36Fd774e0a31Ba7e4eA0Eb888fCb0A20fa9262](https://rootstock-testnet.blockscout.com/address/0x6f36Fd774E0a31ba7E4EA0EB888fCb0a20Fa9262) |
+| Dex |[0xaD1A172377f21d3d9d9Fb67cF08eA7A3E281cDBe](https://rootstock-testnet.blockscout.com/address/0xAd1A172377f21d3D9D9Fb67Cf08Ea7a3E281cDbE)|
+| DAO Multi Sig | [0x2de7984aF8CF790cb3f967231CE99B9Ca56159b1](https://rootstock-testnet.blockscout.com/address/0x2De7984aF8cf790cb3F967231Ce99b9cA56159b1) |
+| Factory | [0xab99a7BC0F0da16fF521525d64790bC133db4a0E](https://rootstock-testnet.blockscout.com/address/0xaB99A7bc0F0Da16Ff521525d64790bC133db4a0e) |
+| Token | [0xbA18F2dC2CE0B971F33236fDF76e227bF9d8Ddbd](https://rootstock-testnet.blockscout.com/token/0xbA18F2dC2CE0B971F33236fDF76e227bF9d8Ddbd) |
+| USDT | [0xeE9810a0C8f75e8ba724b11f6ECF550b1756163E](https://rootstock-testnet.blockscout.com/address/0xEe9810A0C8f75E8BA724b11F6EcF550B1756163E) |
 
-### Celo Smart contract address table
+### Celo smart contract address table
 
 | Component | Address |
 |-----------|-------------|
 | Celo | [0xa1F0d0867D27F4cbA61970C70799185EC400F4C6](https://celo-alfajores.blockscout.com/address/0xa1F0d0867D27F4cbA61970C70799185EC400F4C6?tab=contract) |
 
-### Base Smart contract address table
+### Base smart contract address table
 
 | Component | Address |
 |-----------|-------------|
 | Base | Web interface for interacting with the FlashFi protocol |
 
-### Scroll Smart contract address table
+### Scroll smart contract address table
 
 | Component | Address |
 |-----------|-------------|
