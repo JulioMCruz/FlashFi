@@ -6,8 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 //import { useState } from 'react'
 import HeaderComponent from "@/components/Header"
+import { useRouter } from 'next/navigation'
 
 export default function Component() {
+  const router = useRouter()
+
   // const [isWalletConnected, setIsWalletConnected] = useState(false)
   // const [walletAddress, setWalletAddress] = useState('')
 
@@ -27,8 +30,9 @@ export default function Component() {
           <h1 className="text-2xl font-bold text-white">Flash Accounts</h1>
           <Button 
             className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600"
+            onClick={() => router.push('/create')}
           >
-            Create account
+            Create Account
           </Button>
         </div>
 

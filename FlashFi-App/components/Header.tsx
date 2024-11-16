@@ -43,11 +43,11 @@ export default function Component() {
             {isLoggedIn && (
               <>
                 <Link href="/accounts" className="hover:text-yellow-400 transition-colors">Accounts</Link>
-                <Link href="/add-signers" className="hover:text-yellow-400 transition-colors">Add Signers</Link>
-                <Link href="/balance" className="hover:text-yellow-400 transition-colors">Balance</Link>
                 <Link href="/create" className="hover:text-yellow-400 transition-colors">Create Account</Link>
-                <Link href="/send-to-address" className="hover:text-yellow-400 transition-colors">Send to Address</Link>
-            <Link href="/send-tokens" className="hover:text-yellow-400 transition-colors">Send Tokens</Link>
+                {/* <Link href="/add-signers" className="hover:text-yellow-400 transition-colors">Add Signers</Link> */}
+                <Link href="/balance" className="hover:text-yellow-400 transition-colors">Balance</Link>
+                {/* <Link href="/send-to-address" className="hover:text-yellow-400 transition-colors">Send to Address</Link>
+            <Link href="/send-tokens" className="hover:text-yellow-400 transition-colors">Send Tokens</Link> */}
               </>
             )}
           </div>
@@ -84,11 +84,11 @@ export default function Component() {
          { isLoggedIn && (
             <>
                 <Link href="/accounts" className="block py-2 hover:text-yellow-400 transition-colors">Accounts</Link>
-                <Link href="/add-signers" className="block py-2 hover:text-yellow-400 transition-colors">Add Signers</Link>
-                <Link href="/balance" className="block py-2 hover:text-yellow-400 transition-colors">Balance</Link>
                 <Link href="/create" className="block py-2 hover:text-yellow-400 transition-colors">Create Account</Link>
-                <Link href="/send-to-address" className="block py-2 hover:text-yellow-400 transition-colors">Send to Address</Link>
-                <Link href="/send-tokens" className="block py-2 hover:text-yellow-400 transition-colors">Send Tokens</Link>
+                {/* <Link href="/add-signers" className="block py-2 hover:text-yellow-400 transition-colors">Add Signers</Link> */}
+                <Link href="/balance" className="block py-2 hover:text-yellow-400 transition-colors">Balance</Link>
+                {/* <Link href="/send-to-address" className="block py-2 hover:text-yellow-400 transition-colors">Send to Address</Link>
+                <Link href="/send-tokens" className="block py-2 hover:text-yellow-400 transition-colors">Send Tokens</Link> */}
                 <button className="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold py-2 px-4 rounded"
                 onClick={logout} >
                     Logout  
