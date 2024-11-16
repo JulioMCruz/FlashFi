@@ -76,10 +76,18 @@ Please refer to individual package documentation for specific setup instructions
 - [FlashFi-Contracts](./FlashFi-Contracts/README.md) - Smart contract implementation
 - [FlashFi-Interface](./FlashFi-Interface/README.md) - User interface
 
-| Component | Description |
+
+### Smart contract address table
+
+| Component | Address |
 |-----------|-------------|
-| FlashFi-Contracts | Core smart contracts implementing flash loan and multi-sig logic |
-| FlashFi-Interface | Web interface for interacting with the FlashFi protocol |
+| Mantle | Core smart contracts implementing flash loan and multi-sig logic |
+| Rootstock | [0x6f36Fd774e0a31Ba7e4eA0Eb888fCb0A20fa9262](https://explorer.testnet.rootstock.io/address/0x6f36fd774e0a31ba7e4ea0eb888fcb0a20fa9262) |
+| Celo | [0xa1F0d0867D27F4cbA61970C70799185EC400F4C6](https://celo-alfajores.blockscout.com/address/0xa1F0d0867D27F4cbA61970C70799185EC400F4C6?tab=contract) |
+| Base | Web interface for interacting with the FlashFi protocol |
+| Scroll | Web interface for interacting with the FlashFi protocol |
+
+
 
 ## License
 
