@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
-import { Info, Plus, Trash2, HelpCircle, ChevronUp, ChevronDown } from 'lucide-react';
+import { Info, Plus, Trash2, HelpCircle, ChevronUp, ChevronDown, Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,6 +32,16 @@ interface Signer {
   address: string
 }
 
+// Add this constant for contract addresses
+const FACTORY_ADDRESSES = {
+  'mantle-sepolia': '0x1c1e13Cf5C9F8EBA03BB58fD066b466ed09201e6',
+  'rootstock-testnet': '0xab99a7BC0F0da16fF521525d64790bC133db4a0E',
+  'celo-alfajores': '0x70dDB1e89Ca415DDB8F6B0C609131713236D9617',
+  'scroll-sepolia': '0x0d44973607f76CB80d99A8eB8d70B097523DE584',
+  'base-sepolia': '0xBAE8146473796c202ED0439fc67e6F161C430159',
+  'arbitrum-sepolia': '0xdCA4D52154762d2cA6d925A18Caad817cf990554',
+}
+
 export default function Component() {
 
   const [accountName, setAccountName] = useState('')
@@ -50,10 +60,11 @@ export default function Component() {
     { id: 'base-sepolia', name: 'Base Sepolia', icon: '/assets/base.png', chainId: baseSepolia.id },
     { id: 'arbitrum-sepolia', name: 'Arbitrum Sepolia', icon: '/assets/arbitrum.png', chainId: arbitrumSepolia.id },
     { id: 'scroll-sepolia', name: 'Scroll Sepolia', icon: '/assets/scroll.png', chainId: scrollSepolia.id },
-    { id: 'linea-sepolia', name: 'Linea Sepolia', icon: '/assets/linea.png', chainId: lineaSepolia.id },
+    // { id: 'linea-sepolia', name: 'Linea Sepolia', icon: '/assets/linea.png', chainId: lineaSepolia.id },
   ]
 
   const [isLoading, setIsLoading] = useState(true);
+  const [isDeploying, setIsDeploying] = useState(false);
 
   useEffect(() => {
     const initNetwork = async () => {
@@ -90,28 +101,35 @@ export default function Component() {
     if (currentStep === 1) {
       setCurrentStep(2);
     } else {
-      // Get array of addresses from signers
-      const addresses = signers.map(signer => signer.address);
-      const thresholdNumber = parseInt(threshold);
-      
-      console.log('Addresses:', addresses);
-      console.log('Threshold:', thresholdNumber);
+      try {
+        setIsDeploying(true);
+        const addresses = signers.map(signer => signer.address);
+        const thresholdNumber = parseInt(threshold);
+        
+        const factoryAddress = FACTORY_ADDRESSES[selectedNetwork];
+        if (!factoryAddress) {
+          throw new Error('No factory address for selected network');
+        }
 
-      await writeContract({ 
-        abi: FlashMultisigFactoryABI.abi,
-        address: '0xab99a7BC0F0da16fF521525d64790bC133db4a0E',
-        functionName: 'deployNewMultisig',
-        args: [
-          addresses,
-          thresholdNumber,
-        ],
-      })
-
+        console.log('Deploying to:', factoryAddress);
+        await writeContract({ 
+          abi: FlashMultisigFactoryABI.abi,
+          address: factoryAddress,
+          functionName: 'deployNewMultisig',
+          args: [
+            addresses,
+            thresholdNumber,
+          ],
+        })
+        console.log('Account deployed');
+      } finally {
+        setIsDeploying(false);
+      }
     }
   }
 
   const [signers, setSigners] = useState<Signer[]>([
-    { name: 'Signer 1', address: '0xF23f8f87c5654d31c7Ed8d1C...' }
+    { name: 'Signer 1', address: '' }
   ])
   const [threshold, setThreshold] = useState('1')
   //const walletAddress = '0xF23L.C58E'
@@ -242,8 +260,16 @@ export default function Component() {
                   <Button 
                     className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600"
                     onClick={handleCreateAccount}
+                    disabled={isDeploying}
                   >
-                    Next
+                    {isDeploying ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Deploying...
+                      </>
+                    ) : (
+                      'Next'
+                    )}
                   </Button>
                 </div>
               </div>
@@ -355,8 +381,16 @@ export default function Component() {
                   <Button 
                     className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600"
                     onClick={handleCreateAccount}
+                    disabled={isDeploying}
                   >
-                    Create Account
+                    {isDeploying ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Deploying...
+                      </>
+                    ) : (
+                      'Create Account'
+                    )}
                   </Button>
                 </div>
               </div>

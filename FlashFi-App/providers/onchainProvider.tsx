@@ -47,7 +47,7 @@ export default function OnchainProvider({ children }: { children: ReactNode }) {
     viemChainToCustomNetwork(baseSepolia, '/assets/base.png'),
     viemChainToCustomNetwork(arbitrumSepolia, '/assets/arbitrum.png'),
     viemChainToCustomNetwork(scrollSepolia, '/assets/scroll.png'),
-    viemChainToCustomNetwork(lineaSepolia, '/assets/linea.png'),
+    // viemChainToCustomNetwork(lineaSepolia, '/assets/linea.png'),
   ];
 
   if (!dynamicEnvId) {
