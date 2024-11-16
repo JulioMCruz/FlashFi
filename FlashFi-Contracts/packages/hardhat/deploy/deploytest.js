@@ -61,27 +61,89 @@ if (event) {
     await usdt.mint();
     await token.mint();
 
-    // Transfer tokens to multisig
-    const usdtAmount = BigInt("1000000000000"); // 1M USDT with 6 decimals
-    const tokenAmount = BigInt("1000000000000000000000000"); // 1M Tokens with 18 decimals
+    // Transfer tokens to multisig - increase amounts
+    const usdtAmount = ethers.parseEther("30000000"); // Increased amount
+    const tokenAmount = ethers.parseEther("30000000"); // Increased amount
 
     await usdt.transfer(multisigAddress, usdtAmount);
     await token.transfer(multisigAddress, tokenAmount);
 
-    // Add token support to multisig
-    const fee = 10; // 0.1% fee
-    await daoMultisig.addToken(usdt.target, fee);
-    await daoMultisig.addToken(token.target, fee);
+    // Add token support to multisig with lower fee
+    const multisigFee = 1; // 0.01% fee instead of 0.1%
+    await daoMultisig.addToken(usdt.target, multisigFee);
+    await daoMultisig.addToken(token.target, multisigFee);
+
+    // Deploy DEX
+    const GenericDex = await ethers.getContractFactory("GenericDex");
+    const dex = await GenericDex.deploy();
+    await dex.waitForDeployment();
+    console.log("DEX deployed to:", dex.target);
+
+    // Setup DEX with even more favorable rates
+    const rateAtoB = BigInt("1100000000000000000"); // 1 TokenA = 10 percent gain
+    const rateBtoA = BigInt("1100000000000000000"); // 1 TokenB = 10 percent gain
+
+    // Approve larger amounts
+    await token.approve(dex.target, BigInt("1000000000000000000000000000"));
+    await usdt.approve(dex.target, BigInt("1000000000000000000000000000"));
+
+    // Add more liquidity to DEX
+    await dex.addTokenPairWithDeposit(
+        await token.target,
+        await usdt.target,
+        rateAtoB,
+        rateBtoA,
+        ethers.parseEther("10000000"),
+        ethers.parseEther("10000000")
+    );
+
+    console.log("Balance of Token in DEX:", ethers.formatEther(await token.balanceOf(dex.target)));
+    console.log("Balance of USDT in DEX:", ethers.formatEther(await usdt.balanceOf(dex.target)));
+
+    // Deploy Liquidation Simulator
+    const LiquidationSimulator = await ethers.getContractFactory("LiquidationSimulator");
+    simulator = await LiquidationSimulator.deploy(
+        multisigAddress,
+        await dex.target
+    );
+    await simulator.waitForDeployment();
+    console.log("LiquidationSimulator deployed to:", simulator.target);
+
+    // Calculate required profit tokens and transfer them to simulator
+    const flashLoanAmount = ethers.parseEther("100000");
+    const flashLoanFee = (flashLoanAmount * BigInt(100)) / BigInt(10000); // Using multisigFee (0.01%)
+    const repayAmount = flashLoanAmount + flashLoanFee;
+    
+    // Get required profit tokens for swap
+    const swapAmount = await dex.previewSwap(
+        token.target,
+        usdt.target,
+        repayAmount
+    );
+    console.log("Required profit tokens:", ethers.formatEther(swapAmount));
+
+    // Transfer profit tokens to simulator
+    await token.transfer(simulator.target, swapAmount);
+    console.log("Simulator profit token balance:", ethers.formatEther(await token.balanceOf(simulator.target)));
+
+    // Execute liquidation
+    await simulator.simulateLiquidation(
+        usdt.target,
+        token.target,
+        flashLoanAmount
+    );
+    console.log("Liquidation successful");
 
 // Save deployments with network info
 const deployments = {
     networkName: network.name,
     chainId: network.chainId,
-    usdt: usdt.address,
-    token: token.address,
-    factory: factory.address,
+    usdt: usdt.target,
+    token: token.target,
+    factory: factory.target,
     daoMultisig: multisigAddress,
-    timestamp: new Date().toISOString()
+    dex: dex.target,
+    flashloan: simulator.target,
   };
 
   await saveDeployments(network.chainId, deployments);
@@ -92,14 +154,6 @@ const deployments = {
 } catch (error) {
     console.error("\nDeployment failed!");
     console.error("Error details:", error);
-    
-    if (error.message.includes("network connection")) {
-      console.error("\nPossible solutions:");
-      console.error("1. Check if your RPC URL is correct in .env file");
-      console.error("2. Verify network connection");
-      console.error("3. Make sure you're connected to the right network");
-    }
-    
     process.exit(1);
   }
 }
