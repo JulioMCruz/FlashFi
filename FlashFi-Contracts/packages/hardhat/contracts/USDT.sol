@@ -6,15 +6,15 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract USDT is ERC20 {
     constructor() ERC20("USD Token", "USDT") {
-        _mint(msg.sender, 10000000 * 10 ** 6); // 1000 tokens with 6 decimals
+        _mint(msg.sender, 1000000000 * 10 ** 18); // 1000 tokens with 6 decimals
     }
 
     function decimals() public view virtual override returns (uint8) {
-        return 6;
+        return 18;
     }
 
     function mint() public {
-        _mint(msg.sender, 1000000 * 10 ** 6);
+        _mint(msg.sender, 1000000 * 10 ** 18);
     }
 
     function getAddress() public view returns (address) {
