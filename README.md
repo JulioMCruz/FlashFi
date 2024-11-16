@@ -77,14 +77,35 @@ Please refer to individual package documentation for specific setup instructions
 - [FlashFi-Interface](./FlashFi-Interface/README.md) - User interface
 
 
-### Smart contract address table
+### Mantle Smart contract address table
 
 | Component | Address |
 |-----------|-------------|
 | Mantle | Core smart contracts implementing flash loan and multi-sig logic |
+
+
+### Rootstock Smart contract address table
+
+| Component | Address |
+|-----------|-------------|
 | Rootstock | [0x6f36Fd774e0a31Ba7e4eA0Eb888fCb0A20fa9262](https://explorer.testnet.rootstock.io/address/0x6f36fd774e0a31ba7e4ea0eb888fcb0a20fa9262) |
+
+### Celo Smart contract address table
+
+| Component | Address |
+|-----------|-------------|
 | Celo | [0xa1F0d0867D27F4cbA61970C70799185EC400F4C6](https://celo-alfajores.blockscout.com/address/0xa1F0d0867D27F4cbA61970C70799185EC400F4C6?tab=contract) |
+
+### Base Smart contract address table
+
+| Component | Address |
+|-----------|-------------|
 | Base | Web interface for interacting with the FlashFi protocol |
+
+### Scroll Smart contract address table
+
+| Component | Address |
+|-----------|-------------|
 | Scroll | Web interface for interacting with the FlashFi protocol |
 
 
