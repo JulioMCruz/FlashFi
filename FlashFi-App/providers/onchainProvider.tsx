@@ -9,14 +9,41 @@ import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 import { DynamicWagmiConnector } from '@dynamic-labs/wagmi-connector'
 import { WagmiProvider } from 'wagmi'
 import { config } from "../lib/wagmi";
+import { mantleSepoliaTestnet, rootstockTestnet } from 'viem/chains'
+import type { Chain } from "viem";
 
 // const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_API ?? undefined
 const dynamicEnvId = process.env.NEXT_PUBLIC_DYNAMIC_ENV_ID;
-
-
 const queryClient = new QueryClient()
 
+
 export default function OnchainProvider({ children }: { children: ReactNode }) {
+
+  const viemChainToCustomNetwork = (viemChain: Chain, iconUrl?: string) => {
+    return {
+      blockExplorerUrls: viemChain.blockExplorers?.default?.url
+        ? [viemChain.blockExplorers.default.url]
+        : [],
+      chainId: viemChain.id,
+      chainName: viemChain.name,
+      iconUrls: iconUrl ? [iconUrl] : [],
+      name: viemChain.name,
+      nativeCurrency: {
+        decimals: viemChain.nativeCurrency.decimals,
+        name: viemChain.nativeCurrency.name,
+        symbol: viemChain.nativeCurrency.symbol,
+      },
+      networkId: viemChain.id,
+      rpcUrls: viemChain.rpcUrls?.default?.http
+        ? [...viemChain.rpcUrls.default.http]
+        : [],
+    };
+  };
+  
+  const evmNetworks = [
+    viemChainToCustomNetwork(rootstockTestnet, 'https://app.dynamic.xyz/assets/networks/eth.svg'),
+    viemChainToCustomNetwork(mantleSepoliaTestnet, 'https://app.dynamic.xyz/assets/networks/eth.svg'),
+  ];
 
   if (!dynamicEnvId) {
     const errMsg =
@@ -30,6 +57,7 @@ export default function OnchainProvider({ children }: { children: ReactNode }) {
       settings={{
         environmentId: dynamicEnvId,
         walletConnectors: [EthereumWalletConnectors],
+        overrides: { evmNetworks },
   }}
     >
       <WagmiProvider config={config}>
