@@ -81,7 +81,14 @@ Please refer to individual package documentation for specific setup instructions
 
 | Component | Address |
 |-----------|-------------|
-| Mantle | Core smart contracts implementing flash loan and multi-sig logic |
+| USDT | [0x563Ce7D7984e323A94C469fBD905323a9F97Ca1d](https://sepolia.mantlescan.xyz/address/0x563Ce7D7984e323A94C469fBD905323a9F97Ca1d) |
+| Token | [0xc53B53BCB61b2d34FDE6c4852BA8cd3B59619177](https://sepolia.mantlescan.xyz/address/0xc53B53BCB61b2d34FDE6c4852BA8cd3B59619177) |
+| Factory | [0x1c1e13Cf5C9F8EBA03BB58fD066b466ed09201e6](https://sepolia.mantlescan.xyz/address/0x1c1e13Cf5C9F8EBA03BB58fD066b466ed09201e6) |
+| DAO Multi Sig | [0x5Ec971128Ea605CB37aeF57Ca0011bB3b9E7994D](https://sepolia.mantlescan.xyz/address/0x5ec971128ea605cb37aef57ca0011bb3b9e7994d) |
+| Dex | [0xe4E846a3c1bb3B16C76eb4D64292fadB0A72E813](https://sepolia.mantlescan.xyz/address/0xe4E846a3c1bb3B16C76eb4D64292fadB0A72E813) |
+| Flashloan | [0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1](https://sepolia.mantlescan.xyz/address/0xBDD1b9A14a4A5E6B7Ab9dbDfB8EaCA8bbe4931f1) |
+
+
 
 
 ### Rootstock smart contract address table
