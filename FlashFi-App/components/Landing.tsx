@@ -1,15 +1,7 @@
-import { useState } from 'react'
-import { MenuIcon, XIcon } from 'lucide-react'
 
-import {
-  DynamicWidget,
-  // useDynamicContext,
-} from "@/lib/dynamic";
-//import { useAccount} from 'wagmi'
-//import Spinner from "@/components/Spinner";
+import HeaderComponent from "@/components/Header"
 
 export default function Landing() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 //  const { sdkHasLoaded, user } = useDynamicContext();
 //  const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -17,44 +9,8 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <nav className="bg-gray-800 p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-            FlashFi
-          </div>
-          <div className="hidden md:flex space-x-4">
-            <a href="#" className="hover:text-yellow-400 transition-colors">Developers</a>
-            <a href="#" className="hover:text-yellow-400 transition-colors">Ecosystem</a>
-            <a href="#" className="hover:text-yellow-400 transition-colors">Community</a>
-            <a href="#" className="hover:text-yellow-400 transition-colors">Resources</a>
-            <a href="#" className="hover:text-yellow-400 transition-colors">FlashFi (DAO)</a>
-          </div>
-          {/* <button className="hidden md:block bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold py-2 px-4 rounded">
-            Launch App *
-          </button> */}
-          <div className="ml-auto flex items-center gap-4">
-              <div className="ml-auto flex items-center gap-4">
-                 <DynamicWidget />
-              </div>
-            </div>          
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
-          </button>
-        </div>
-      </nav>
-      
-      {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 p-4">
-          <a href="#" className="block py-2 hover:text-yellow-400 transition-colors">Developers</a>
-          <a href="#" className="block py-2 hover:text-yellow-400 transition-colors">Ecosystem</a>
-          <a href="#" className="block py-2 hover:text-yellow-400 transition-colors">Community</a>
-          <a href="#" className="block py-2 hover:text-yellow-400 transition-colors">Resources</a>
-          <a href="#" className="block py-2 hover:text-yellow-400 transition-colors">FlashFi (DAO)</a>
-          <button className="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold py-2 px-4 rounded">
-            Launch App
-          </button>
-        </div>
-      )}
+
+      <HeaderComponent />
 
       <main className="container mx-auto mt-16 px-4">
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-12rem)]">

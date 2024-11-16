@@ -1,51 +1,26 @@
 'use client'
 
 // LogOut
-import { Bell, Eye, HelpCircle, Import, Upload, Wallet } from 'lucide-react'
+import { Eye, HelpCircle, Import, Upload } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { useState } from 'react'
+//import { useState } from 'react'
+import HeaderComponent from "@/components/Header"
 
 export default function Component() {
-  const [isWalletConnected, setIsWalletConnected] = useState(false)
-  const [walletAddress, setWalletAddress] = useState('')
+  // const [isWalletConnected, setIsWalletConnected] = useState(false)
+  // const [walletAddress, setWalletAddress] = useState('')
 
-  const connectWallet = async () => {
-    // Simulate wallet connection
-    setIsWalletConnected(true)
-    setWalletAddress('0xF23L.C58E')
-  }
+  // const connectWallet = async () => {
+  //   // Simulate wallet connection
+  //   setIsWalletConnected(true)
+  //   setWalletAddress('0xF23L.C58E')
+  // }
 
   return (
     <div className="min-h-screen bg-gray-900">
-      <header className="border-b border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-              FlashFi
-            </div>
-            
-            {isWalletConnected ? (
-              <div className="flex items-center space-x-4">
-                <Button variant="ghost" size="icon">
-                  <Bell className="h-5 w-5 text-gray-400" />
-                </Button>
-                <div className="flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-2">
-                  <Wallet className="h-4 w-4 text-yellow-400" />
-                  <span className="text-sm text-gray-300">{walletAddress}</span>
-                </div>
-              </div>
-            ) : (
-              <Button 
-                onClick={connectWallet}
-                className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-500 hover:to-orange-600"
-              >
-                Connect Wallet
-              </Button>
-            )}
-          </div>
-        </div>
-      </header>
+
+      <HeaderComponent />
 
       <main className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
