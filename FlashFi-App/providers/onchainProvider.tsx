@@ -9,7 +9,7 @@ import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 import { DynamicWagmiConnector } from '@dynamic-labs/wagmi-connector'
 import { WagmiProvider } from 'wagmi'
 import { config } from "../lib/wagmi";
-import { mantleSepoliaTestnet, rootstockTestnet, celoAlfajores, baseSepolia, arbitrumSepolia } from 'viem/chains'
+import { mantleSepoliaTestnet, rootstockTestnet, celoAlfajores, baseSepolia, arbitrumSepolia, scrollSepolia } from 'viem/chains'
 import type { Chain } from "viem";
 
 // const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_API ?? undefined
@@ -46,6 +46,7 @@ export default function OnchainProvider({ children }: { children: ReactNode }) {
     viemChainToCustomNetwork(celoAlfajores, '/assets/celo.png'),
     viemChainToCustomNetwork(baseSepolia, '/assets/base.png'),
     viemChainToCustomNetwork(arbitrumSepolia, '/assets/arbitrum.png'),
+    viemChainToCustomNetwork(scrollSepolia, '/assets/scroll.png'),
   ];
 
   if (!dynamicEnvId) {
