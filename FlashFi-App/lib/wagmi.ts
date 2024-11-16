@@ -13,7 +13,7 @@ export const config = createConfig({
     [baseSepolia.id]: http(baseSepolia.rpcUrls.default.http[0]),
     [arbitrumSepolia.id]: http(arbitrumSepolia.rpcUrls.default.http[0]),
     [scrollSepolia.id]: http(scrollSepolia.rpcUrls.default.http[0]),
-    [lineaSepolia.id]: http(lineaSepolia.rpcUrls.default.http[0]),
+    // [lineaSepolia.id]: http(lineaSepolia.rpcUrls.default.http[0]),
   },
 });
 
