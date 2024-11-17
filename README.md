@@ -165,7 +165,7 @@ Please refer to individual package documentation for specific setup instructions
 | Component | Address |
 |-----------|-------------|
 | Factory | [0x0d44973607f76CB80d99A8eB8d70B097523DE584](https://devnet.neonscan.org/tx/0xb759e56c02aecc205ba3324140d4f1367979c063ffce256786e41720e7731ada) |
-| DAO Multisig | [0x99f51a1A141A210Cc8e55Fa33616f582fad241d4](https://sepolia.scrollscan.com/address/0x99f51a1A141A210Cc8e55Fa33616f582fad241d4) |
+| DAO Multisig | [0x99f51a1A141A210Cc8e55Fa33616f582fad241d4](https://devnet.neonscan.org/search?q=0xf7b7d6580cd35cc184f5074fed8b1d1341906f24b633158a102db395c1d4ee4b) |
 
 ### Unichain Sepolia smart contract address table
 
