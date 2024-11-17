@@ -1,10 +1,10 @@
-# Sample Hardhat Project
+# FlashFi Cross Chain Overview
 
 FlashFi uses LayerZero OApp and OFT. Users can initiate a cross-chain flash loan by calling the send function in the OApp Treasury contract on the original chain A, passing in the loan amount, profit, and the loan token address. The payload is transmitted to the target chain B through LayerZero's DVN, where it is decoded and used to call the simulateLiquidation function in the LiquidationSimulator contract to execute the flash loan.
 
 Profits earned through the flash loan are stored in the LiquidationSimulator contract. Users can then initiate a cross-chain request from the original chain A to stake the profits into the pool on the target chain. On chain A, the OFT contract will mint OFT Tokens 1:1 for the user, allowing the user to exchange these OFT Tokens in the pool for stablecoins with a 1:1 value.
 
-![alt text](image.png)
+![image](images/image.png)
 
 Here's a cleaner and more structured format for your `README.md` that clearly displays the supported cross-chain connections and deployed contract addresses:
 
