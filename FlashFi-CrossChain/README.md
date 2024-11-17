@@ -6,8 +6,6 @@ Profits earned through the flash loan are stored in the LiquidationSimulator con
 
 ![image](images/image.png)
 
-Here's a cleaner and more structured format for your `README.md` that clearly displays the supported cross-chain connections and deployed contract addresses:
-
 ---
 
 ## Supported Cross-Chain OApp CallFunction and OFT Token Mint/Burn
