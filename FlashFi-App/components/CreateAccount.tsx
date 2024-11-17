@@ -523,8 +523,64 @@ export default function Component() {
             </Card>
           </div>
 
-
         </div>
+
+        {selectedNetwork && (
+          <div className="mt-6 p-4 bg-gray-800 rounded-lg">
+            <h3 className="text-white font-semibold mb-2">Network Explorer</h3>
+            <div className="text-gray-400">
+              {selectedNetwork === 'arbitrum-sepolia' && (
+                <a href="https://sepolia.arbiscan.io/address/0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-yellow-400 hover:text-yellow-500">
+                  View Factory Contract on Arbiscan
+                </a>
+              )}
+              {selectedNetwork === 'base-sepolia' && (
+                <a href="https://sepolia.basescan.org/address/0xed815da5E8f9EeB71af564774eBbf9a25e1263a7" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-yellow-400 hover:text-yellow-500">
+                  View Factory Contract on BaseScan
+                </a>
+              )}
+              {selectedNetwork === 'mantle-sepolia' && (
+                <a href="https://sepolia.mantlescan.xyz/address/0x1c1e13Cf5C9F8EBA03BB58fD066b466ed09201e6" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-yellow-400 hover:text-yellow-500">
+                  View Factory Contract on MantleScan
+                </a>
+              )}
+              {selectedNetwork === 'rootstock-testnet' && (
+                <a href="https://rootstock-testnet.blockscout.com/address/0xaB99A7bc0F0Da16Ff521525d64790bC133db4a0e" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-yellow-400 hover:text-yellow-500">
+                  View Factory Contract on Blockscout
+                </a>
+              )}
+              {selectedNetwork === 'celo-alfajores' && (
+                <a href="https://celo-alfajores.blockscout.com/address/0x70dDB1e89Ca415DDB8F6B0C609131713236D9617" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-yellow-400 hover:text-yellow-500">
+                  View Factory Contract on Blockscout
+                </a>
+              )}
+              {selectedNetwork === 'scroll-sepolia' && (
+                <a href="https://sepolia.scrollscan.com/address/0x0d44973607f76CB80d99A8eB8d70B097523DE584" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-yellow-400 hover:text-yellow-500">
+                  View Factory Contract on ScrollScan
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
       </main>
     </div>
   )
