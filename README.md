@@ -146,6 +146,35 @@ Please refer to individual package documentation for specific setup instructions
 | DEX | [0x92BFAa0dA9F4E569d862cc45A32Bcaf19e8FAfF1](https://sepolia.scrollscan.com/address/0x92BFAa0dA9F4E569d862cc45A32Bcaf19e8FAfF1) |
 | Flashloan contract | [0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B](https://sepolia.scrollscan.com/address/0xB869087eeA616eE91e8F3b3e32aD69dD3cDC138B) |
 
+### Linea smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| Factory | [0xcfc622e6330791d0899b32e59bf4c248b6844942](https://sepolia.lineascan.build/tx/0xe9b09808b16b206e2ad647165917ea6b78cbe93b4c8d7c62e39b6c8024705f9f) |
+| DAO Multisig | [0x187b1d59c9cf36e174a6866070d9e65d71ccdbdf](https://sepolia.lineascan.build/tx/0x41a434e011f5a74e057a1e50dd8b050e2a503775e2de4a0f946675d8bcd024dc) |
+
+### Zircuit smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| Factory | [0x4277a06DF84b74Da159b2Fcd13863c6776E0d27d](https://explorer.testnet.zircuit.com/tx/0x18c8c8008b40de7fea6f459bbd30f708d2eaa7fbb8b93846b979fce66f7d9507) |
+| DAO Multisig | [0x34BaFC39A86Ff244cF8BBfD8FBC5907473B77d31
+](https://explorer.testnet.zircuit.com/tx/0x3514f7d2020b53742ed144ce1d45eb9ac5d277dd912e7d788541859b8456074d) |
+
+### Neon EVM smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| Factory | [0x0d44973607f76CB80d99A8eB8d70B097523DE584](https://devnet.neonscan.org/tx/0xb759e56c02aecc205ba3324140d4f1367979c063ffce256786e41720e7731ada) |
+| DAO Multisig | [0x99f51a1A141A210Cc8e55Fa33616f582fad241d4](https://sepolia.scrollscan.com/address/0x99f51a1A141A210Cc8e55Fa33616f582fad241d4) |
+
+### Unichain Sepolia smart contract address table
+
+| Component | Address |
+|-----------|-------------|
+| Factory | [0x0d44973607f76CB80d99A8eB8d70B097523DE584](https://sepolia.scrollscan.com/address/0x0d44973607f76CB80d99A8eB8d70B097523DE584) |
+| DAO Multisig | [0x99f51a1A141A210Cc8e55Fa33616f582fad241d4](https://sepolia.scrollscan.com/address/0x99f51a1A141A210Cc8e55Fa33616f582fad241d4) |
+
 
 ### Base <=> Arbitrum smart contract address table
 
