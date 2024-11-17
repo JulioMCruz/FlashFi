@@ -9,12 +9,14 @@ import Link from "next/link";
 //import { useAccount} from 'wagmi'
 //import Spinner from "@/components/Spinner";
 import { useDynamicContext, useIsLoggedIn } from '@dynamic-labs/sdk-react-core'
+import { useRouter } from "next/navigation";
 
 export default function Component() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const isLoggedIn = useIsLoggedIn();
     const { handleLogOut, setShowAuthFlow } = useDynamicContext()
+    const router = useRouter()
 
     function login() {
         if (!isLoggedIn) {
@@ -26,7 +28,7 @@ export default function Component() {
 
   async function logout() {
     await handleLogOut()
-    //router.push('/')
+    router.push('/')
     //setIsMenuOpen?.(false)
   }
 
