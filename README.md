@@ -158,8 +158,7 @@ Please refer to individual package documentation for specific setup instructions
 | Component | Address |
 |-----------|-------------|
 | Factory | [0x4277a06DF84b74Da159b2Fcd13863c6776E0d27d](https://explorer.testnet.zircuit.com/tx/0x18c8c8008b40de7fea6f459bbd30f708d2eaa7fbb8b93846b979fce66f7d9507) |
-| DAO Multisig | [0x34BaFC39A86Ff244cF8BBfD8FBC5907473B77d31
-](https://explorer.testnet.zircuit.com/tx/0x3514f7d2020b53742ed144ce1d45eb9ac5d277dd912e7d788541859b8456074d) |
+| DAO Multisig | [0x34BaFC39A86Ff244cF8BBfD8FBC5907473B77d31](https://explorer.testnet.zircuit.com/tx/0x3514f7d2020b53742ed144ce1d45eb9ac5d277dd912e7d788541859b8456074d) |
 
 ### Neon EVM smart contract address table
 
